@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    
+    <!-- ******************************
+         Author: Martin Kean
+         Creation date: 16 October 2020
+         ******************************
+    -->
+    
+<head>
+    <title>Scroll animation example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        .person {
+          position: fixed;
+          margin-top: -50px;
+          margin-left: -50px;
+
+          animation: move 1s linear infinite;
+          animation-play-state: paused;
+          animation-delay: calc(var(--scroll) * -1s);
+
+          animation-iteration-count: 1;
+          animation-fill-mode: both;
+        }
+
+        @keyframes rotate {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        @keyframes move {
+          0%   { top: 100px; left:100px; }
+          50%  { top: 200px; left:400px; transform: scale(3);}
+          100% { top: 700px; left:700px; }
+        }
+        
+        body {
+          min-height: 120vh;
+        }  
+        
+    </style>
+    
+</head>   
+    
+<body>
+
+    <section>    
+        <svg width="100" height="100" viewBox="0 0 24 24" class="person">
+          <path d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" />
+        </svg>    
+    </section>
+    
+    <script  src="js/scroller.js"></script>
+    
+</body>    
+    
+</html>
