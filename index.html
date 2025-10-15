@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<!-- *****************************
+         Author: 
+         Creation date: 
+     ***************************** -->
+
+<head>
+    <title>Deserted Unicorn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This stylesheet below defines the design for the page, excluding the bee animation -->
+    <link href="gardens-stylesheet.css" rel="stylesheet">
+
+    <style>
+
+        *+
+        
+        /* --- Page Background Image and Colour --- */
+        body {
+            background: hsla(192, 56%, 63%) url('Animation background web.svg') no-repeat;
+            background-size: contain;
+            /* --- Shift the flowers and grass image down the page a bit --- */
+            background-position: 0 18rem;
+        }
+
+        /* --- The Container for the Path that the bee takes --- */
+        .path-container {
+            /* --- Dynamic Viewport Width --- */
+            width: 100dvw;
+            display: block;
+            position: absolute;
+            top: 0;
+        }
+
+        /* --- The Bee. The offset path is a second path that the bee takes --- */
+        .bee {
+            width: 3.75rem;
+            height: 3.75rem;
+            top: 0;
+            position: absolute;
+            /* --- Make the Bee come forward in the layering --- */
+            z-index: 1111;
+
+            offset-path: path("M4.3,45.72C37.71,14.37,84.92.99,130.08,6.05c22.36,2.5,44.3,9.66,63.52,21.42,22.3,13.66,39.18,33.74,55.3,53.98,15.93,20,31.71,40.04,51.88,56,17.16,13.58,36.34,24.38,56.71,32.33,42.06,16.42,89.1,20.4,133.24,10.71,50.6-11.11,90.41-42.38,129.81-74.31,42.19-34.18,91.4-71.64,148.82-68.5,53.65,2.93,94.15,44.29,126.67,82.93,31.25,37.14,62.35,78.65,108.39,98.2,46.36,19.68,99.27,10.18,142.2-13.67,45.93-25.51,80.03-67.44,108.68-110.55,7.4-11.14,14.51-22.48,21.51-33.88,1.69-2.75-2.63-5.26-4.32-2.52-28.62,46.59-59.83,93.66-104.13,126.89-40.96,30.72-96.04,48.89-146.74,34.53-100.2-28.37-128.45-159.16-231.03-183.82-52.58-12.64-104.19,13.78-145.18,44.49-42.68,31.98-81.56,71.33-133.06,88.98-43.71,14.97-92.02,14.96-136.15,1.7-22.37-6.72-43.69-16.89-62.82-30.31-20.97-14.7-37.66-33.5-53.53-53.41s-31.54-40.6-52.03-56.11c-17.08-12.92-37.03-21.88-57.86-26.71C108.03-5.32,61.98,1.03,25.11,23.56c-8.75,5.34-16.87,11.61-24.34,18.62-2.35,2.21,1.19,5.74,3.54,3.54h-.01Z");
+            offset-distance: 0%;
+            /* Defining the animation, giving it a name and duration */
+            animation: bee-animation 10s linear infinite;
+            animation-fill-mode: both;
+        }
+
+        /* --- Animating the Bee from A to B --- */
+        @keyframes bee-animation {
+            from {
+                offset-distance: 0%;
+                /* starting on the left */
+            }
+
+            to {
+                offset-distance: 100%;
+                /* ending on the right */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and Nav Menu -->
+    <header>
+        <!-- Title text -->
+        <h1 class="text">Deserted Unicorn</h1>
+        <h2 class="text">Roaming the desert</h2>
+
+        <nav> <!-- Navigation menu -->
+            <a href="#">Home</a>
+            <a href="#">Ranch</a>
+            <a href="#">Petting Zoo</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- The Bee & the Path that the bee takes -->
+    <section>
+        <!-- the Path that the bee takes: -->
+        <svg class="path-container">
+            <path fill="transparent" stroke-width="1"
+                d="m.1,451.9C326,598.64,483.99-185,562.68,41.72s213.54,443.77,274.79,239.41,174.57-124.11,205.05-58.35,65.07,191.87,161.76,187.08,103.2-49.82,132.37-74.93,305.17,94.45,502.04-2.59,217.49-274.78,503.35-123.51"
+                class="path"></path>
+        </svg>
+        <!-- The Bee -->
+        <img class="bee" src="unicorn-silhouette-scaled.png">
+    </section>
+
+    <!-- Footer and Copyright -->
+    <footer>
+        <p>Copyright &copy; Sam 2025.</p>
+    </footer>
+
+</body>
+
+</html>
